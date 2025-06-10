@@ -1,0 +1,397 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css"); /* regular-400, medium-500, semibold-600, bold-700 */
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Pretendard", sans-serif;
+  background-image: url("./img/bg.png");
+  background-attachment: fixed;
+  background-position: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+::selection {
+  background-color: #a6daf4;
+  color: white;
+}
+
+/* 전체 스크롤바 영역 */
+::-webkit-scrollbar {
+  width: 20px;
+  height: 10px;
+}
+
+/* 스크롤바 트랙 (배경) */
+::-webkit-scrollbar-track {
+  background: #e0f7ff;
+  border-radius: 10px;
+}
+
+/* 스크롤바 막대 */
+::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 10px;
+  border: 2px solid #ddd; /* 트랙 색상과 같은 색상으로 경계 주면 더 부드러움 */
+}
+
+/* 스크롤바 막대 hover 시 */
+::-webkit-scrollbar-thumb:hover {
+  background: #5ad2ff;
+  border-color: #5ad2ff;
+}
+
+header {
+  width: 100%;
+  height: 100px;
+  position: fixed;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  z-index: 999;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+header div {
+  width: fit-content;
+  height: 100px;
+  overflow: hidden;
+  margin: 0px auto;
+  display: flex;
+  align-items: center;
+}
+
+header img {
+  height: 80px;
+}
+
+.gal {
+  position: relative;
+  z-index: 998;
+  height: 200px;
+  overflow: hidden;
+  width: fit-content;
+  margin: 0px auto;
+  top: 170px;
+  right: 10px;
+}
+
+@keyframes gal {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.gal img {
+  height: 200px;
+  width: fit-content;
+  margin: 0px auto;
+  animation: gal 1s ease-in-out infinite;
+}
+
+/* sample 섹션 텍스트 애니메이션 관련 */
+.sample {
+  position: relative;
+  height: 300px;
+  font-size: 84px;
+  font-weight: 700;
+  color: #82d5ee6e;
+  margin-top: 150px;
+}
+
+.sample_box > p:first-child {
+  width: fit-content;
+  text-align: center;
+  font-size: 20px;
+  padding: 10px 40px;
+  border: 1px solid #bde7f8;
+  margin: 0px auto;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  color: #bde7f8;
+}
+
+.sample_box > p:last-child {
+  width: fit-content;
+  text-align: center;
+  font-size: 20px;
+  padding-top: 60px;
+  margin: 0px auto;
+  margin-bottom: 20px;
+  color: #bde7f8;
+}
+
+.sample_box {
+  position: sticky;
+  top: 50px;
+  margin-bottom: 40px;
+}
+
+.sample .txt_area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sample .txt_area p {
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0;
+  overflow: hidden;
+}
+
+.sample .txt_area p + p {
+  margin-left: 10px;
+}
+
+.sample .txt_area .word01,
+.sample .txt_area .word02 {
+  opacity: 0;
+  width: 0;
+}
+
+/* slider 스타일 */
+.slider_wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  cursor: pointer;
+  position: relative;
+}
+
+@keyframes floatUpDown {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.slider_wrap p {
+  position: absolute;
+  bottom: -87px;
+  color: #ddd;
+  font-size: 20px;
+  animation: floatUpDown 2s ease-in-out infinite;
+}
+
+.slider {
+  position: relative;
+  width: 600px;
+  height: 400px;
+  perspective: 100px;
+}
+
+.slider .item {
+  position: absolute;
+  width: 600px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: var(--color-just-black);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* 각 item 배경색 */
+.item-1 {
+  background: #bef3fe;
+}
+.item-2 {
+  background: #febef8;
+}
+.item-3 {
+  background: #00bae2;
+}
+.item-4 {
+  background: #fec5fb;
+}
+.item-5 {
+  background: #e1faff;
+}
+
+/* item 위치 조정 */
+.slider .item:nth-child(17) {
+  left: 0;
+  top: 240px;
+}
+.slider .item:nth-child(16) {
+  left: 0;
+  top: 220px;
+}
+.slider .item:nth-child(15) {
+  left: 0;
+  top: 200px;
+}
+.slider .item:nth-child(14) {
+  left: 0;
+  top: 180px;
+}
+.slider .item:nth-child(13) {
+  left: 0;
+  top: 160px;
+}
+.slider .item:nth-child(12) {
+  left: 0;
+  top: 140px;
+}
+.slider .item:nth-child(11) {
+  left: 0;
+  top: 120px;
+}
+.slider .item:nth-child(10) {
+  left: 0;
+  top: 100px;
+}
+.slider .item:nth-child(9) {
+  left: 0;
+  top: 80px;
+}
+.slider .item:nth-child(8) {
+  left: 0;
+  top: 60px;
+}
+.slider .item:nth-child(7) {
+  left: 0;
+  top: 40px;
+}
+.slider .item:nth-child(6) {
+  left: 0;
+  top: 20px;
+}
+.slider .item:nth-child(5) {
+  left: 0;
+  top: 0;
+}
+.slider .item:nth-child(4) {
+  left: 0;
+  top: -20px;
+}
+.slider .item:nth-child(3) {
+  left: 0;
+  top: -40px;
+}
+.slider .item:nth-child(2) {
+  left: 0;
+  top: -60px;
+}
+.slider .item:nth-child(1) {
+  left: 0;
+  top: -80px;
+}
+
+/* 이미지 flex 섹션 */
+.img_flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.img_flex:last-child {
+  margin-bottom: 200px;
+}
+
+.img_box {
+  height: 400px;
+  width: 32%;
+  overflow: hidden;
+  margin-top: 30px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.img_box:hover img {
+  transform: scale(1.2);
+}
+
+.img_box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+/* 팝업 배경 */
+.img-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-modal .modal-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 1;
+}
+
+/* 팝업 이미지 */
+.modal-content {
+  position: relative;
+  z-index: 2;
+  max-width: 90%;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 20px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transform: scale(0.95);
+  transition: all 0.4s ease;
+}
+
+/* 닫기 버튼 */
+.close-btn {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  z-index: 3;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 32px;
+  font-weight: 300; /* 얇게 */
+  font-family: "Pretendard", sans-serif;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.close-btn:hover {
+  color: #ccc;
+  transform: scale(1.2);
+}
+
+footer {
+  height: 50px;
+}
